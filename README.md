@@ -30,7 +30,7 @@ A simple, responsive to-do list web application built with HTML, CSS, and JavaSc
    cd todo-list
    ```
 3. Open index.html in your browser to start using and make changes as you wish with the app.
-4. Live Link:
+4. Live Link: https://iammdfaz12.github.io/ToDo-List-Website/
 
 ## Usage
 
