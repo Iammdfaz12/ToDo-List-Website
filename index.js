@@ -19,6 +19,7 @@ const saveTasks = () => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
+// Add task 
 const addTask = () => {
   const task = taskInput.value.trim();
 
@@ -32,6 +33,13 @@ const addTask = () => {
   saveTasks();
 };
 
+// Add button funtionality
+taskAddButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  addTask();
+});
+
+// Toggle the completed tasks
 const toggleTaskComplete = (index) => {
   tasks[index].completed = !tasks[index].completed;
   updateTaskList();
@@ -39,6 +47,7 @@ const toggleTaskComplete = (index) => {
   saveTasks();
 };
 
+// Delete tasks
 const deleteTask = (index) => {
   tasks.splice(index, 1);
   updateTaskList();
@@ -46,6 +55,7 @@ const deleteTask = (index) => {
   saveTasks();
 };
 
+// Edit tasks
 const editTask = (index) => {
   taskInput.value = tasks[index].text;
 
@@ -55,6 +65,7 @@ const editTask = (index) => {
   saveTasks();
 };
 
+// Update task statistics
 const updatedTaskStats = () => {
   const completedTasks = tasks.filter((task) => task.completed).length;
   const totalTasks = tasks.length;
@@ -70,6 +81,7 @@ const updatedTaskStats = () => {
   }
 };
 
+// Update task list
 const updateTaskList = () => {
   taskLists.innerHTML = "";
 
@@ -96,10 +108,7 @@ const updateTaskList = () => {
   });
 };
 
-taskAddButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  addTask();
-});
+
 
 const blastConfetti = () => {
   const count = 200,
